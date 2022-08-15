@@ -30,7 +30,7 @@ do
     then
         echo "$line"
     fi
-done < newfile.txt
+done < /
 
 
 #git push --all
