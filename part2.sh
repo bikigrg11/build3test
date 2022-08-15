@@ -24,13 +24,15 @@ git commit -m "$gitMessage"
 ## Checking if the files contatins sensitive information
 ## i.e Phone no before pushing the file to the Git Remote
 
+#filePath = pwd
+
 while IFS='' read -r line || [[ -n $line ]]
 do
-    if [[ "$line" =~ ^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)\ [0-9]{3}-[0-9]{4}$ ]]
+    if [[ "$line" =~ ^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)\ [0-9]{3}-[0-9]{4}$|^[0-9]{9}$ ]]
     then
         echo "$line"
     fi
-done < /
+done < pwd
 
 
 #git push --all
