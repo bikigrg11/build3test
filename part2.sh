@@ -37,7 +37,7 @@ do
     fi
 done <newfile.txt
 
-if [$flag=="true"]
+if [ $flag == "true" ]
 	then
 	echo "flag is clear"
 	git push --all
