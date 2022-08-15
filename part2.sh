@@ -35,7 +35,7 @@ while IFS='' read -r line || [[ -n $line ]]
 do
     if [[ "$line" =~ ^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)\ [0-9]{3}-[0-9]{4}$|^[0-9]{9}$ ]]
     then
-        echo "$line"
+        echo "Sensitive Data: $line"
 	flag="false"
     fi
 done <newfile.txt
