@@ -47,7 +47,7 @@ if [ $flag == "true" ]
 	echo "flag is clear"
 	git push --all
 else
-	echo " !!!! sensitive Data found !!!! please remove the data from the files and add try to push again."
+	echo " !!!! sensitive Data found !!!! please remove the data from the files and push again."
 fi
 
 exit 0
