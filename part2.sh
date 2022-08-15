@@ -22,11 +22,10 @@ git commit -m "$gitMessage"
 ## Checking if the files contatins sensitive information
 ## i.e Phone no before pushing the file to the Git Remote
 
-#filePath = pwd
-
 flag="true"
 
 echo "Checking the file"
+echo "---------------------------"
 
 while IFS='' read -r line || [[ -n $line ]]
 do
@@ -36,6 +35,8 @@ do
 	flag="false"
     fi
 done <newfile.txt
+
+echo "---------------------------"
 
 if [ $flag == "true" ]
 	then
