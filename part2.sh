@@ -32,7 +32,7 @@ do
     then
         echo "$line"
     fi
-done < pwd
+done < (cat *)
 
 
 #git push --all
