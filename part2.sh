@@ -10,7 +10,7 @@ touch newfile.txt
 
 echo "this is biki" | cat  >>  newfile.txt
 
-git status
+#git status
 
 git add .
 
@@ -19,7 +19,7 @@ read gitMessage
 
 git commit -m "$gitMessage"
 
-git log
+#git log
 
 ## Checking if the files contatins sensitive information
 ## i.e Phone no before pushing the file to the Git Remote
