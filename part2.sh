@@ -3,13 +3,16 @@
 echo "Verifying your git config file"
 cat .git/config
 
+echo "---------------------------"
 echo "creating a new file"
 touch newfile.txt
 
+
 echo "this is biki" | cat  >>  newfile.txt
 
-#git status
+git status
 
+echo "-----------------------------"
 git add .
 
 echo "Please enter git Commit Message"
@@ -17,6 +20,7 @@ read gitMessage
 
 git commit -m "$gitMessage"
 
+echo "-----------------------------"
 #git log
 
 ## Checking if the files contatins sensitive information
