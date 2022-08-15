@@ -24,7 +24,7 @@ git commit -m "$gitMessage"
 
 #filePath = pwd
 
-flag = "true"
+flag="true"
 
 echo "Checking the file"
 
@@ -33,7 +33,7 @@ do
     if [[ "$line" =~ ^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)\ [0-9]{3}-[0-9]{4}$|^[0-9]{9}$ ]]
     then
         echo "$line"
-	$flag = "false"
+	$flag="false"
     fi
 done <newfile.txt
 
