@@ -32,7 +32,7 @@ do
     then
         echo "$line"
     fi
-done <(cat newfile.txt part1.sh part2.sh)
+done <newfile.txt
 
 
 #git push --all
