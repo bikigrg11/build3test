@@ -30,7 +30,7 @@ do
     then
         echo "$line"
     fi
-done < *
+done < .
 
 
 #git push --all
