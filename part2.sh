@@ -1,13 +1,20 @@
 #!/bin/bash
 
+# Name: Biki Gurung
+# Date: 08/18/22
+# Description: Add and commit to the git repo and check for any sensitive information in this file we are checking for phone numbers.
+# More info: We can feed 1 file to the error checking and in my file i am checking the newfile.txt that was created.
+
+
 echo "Verifying your git config file"
 cat .git/config
 
 echo "---------------------------"
 echo "creating a new file"
+
 touch newfile.txt
-
-
+echo "347-911-7932" | cat >> newfile.txt
+echo "1239448912" | cat >> newfile.txt
 echo "this is biki" | cat  >>  newfile.txt
 
 git status
@@ -21,7 +28,7 @@ read gitMessage
 git commit -m "$gitMessage"
 
 echo "-----------------------------"
-#git log
+git log
 
 ## Checking if the files contatins sensitive information
 ## i.e Phone no before pushing the file to the Git Remote
@@ -33,7 +40,7 @@ echo "---------------------------"
 
 while IFS='' read -r line || [[ -n $line ]]
 do
-    if [[ "$line" =~ ^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)\ [0-9]{3}-[0-9]{4}$|^[0-9]{9}$ ]]
+    if [[ "$line" =~ ^[0-9]{3}-[0-9]{3}-[0-9]{4}$|^\([0-9]{3}\)\[0-9]{3}-[0-9]{4}$|^[0-9]{9}$ ]]
     then
         echo "Sensitive Data> $line"
 	flag="false"
@@ -51,4 +58,3 @@ else
 fi
 
 exit 0
-
